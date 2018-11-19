@@ -5,29 +5,24 @@ public class atm
   private Scanner in;
   private bankAccount account;
   
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     atm atm = new atm(new bankAccount(0.0D, new user(1234, "Ryan Wilson", "January 1, 1970", "123 Main St., Scotch Plains, NJ 07076")));
     atm.run();
   }
   
-  public atm(bankAccount account)
-  {
+  public atm(bankAccount account) {
     this.account = account;
   }
 
-  public bankAccount getAccount()
-  {
+  public bankAccount getAccount() {
     return account;
   }
 
-  public void setAccount(bankAccount account)
-  {
+  public void setAccount(bankAccount account) {
     this.account = account;
   }
 
-  public void run()
-  {
+  public void run() {
     in = new Scanner(System.in);
     boolean running = true;
     boolean accountCheck = false;
@@ -71,19 +66,16 @@ public class atm
     in.close();
   }
 
-  public boolean check(long accountNumber, int pin)
-  {
+  public boolean check(long accountNumber, int pin) {
     return (account.getAccountNumber() == accountNumber) && (account.getUser().getPIN() == pin);
   }
 
-  public void showMenu()
-  {
+  public void showMenu() {
     System.out.println("   [1] Deposit\n   [2] Withdraw\n   [3] View Balance\n   [4] Exit");
     System.out.print("What do you wish to do?: ");
   }
 
-  public void deposit()
-  {
+  public void deposit() {
     boolean valid = false;
     while (!valid) {
       System.out.print("Enter the amount you wish to add: ");
@@ -100,8 +92,7 @@ public class atm
     }
   }
 
-  public void withdraw()
-  {
+  public void withdraw() {
     if (account.getBalance() == 0) {
       System.out.println("There is no money in your account.");
     }
@@ -128,13 +119,11 @@ public class atm
     }
   }
 
-  public void checkBalance()
-  {
+  public void checkBalance() {
     System.out.println("Your current balance is " + format(account.getBalance()) + ".");
   }
 
-  private static String format(double amount)
-  {
+  private static String format(double amount) {
     return "$" + String.format("%,.2f", amount);
   }
 }
