@@ -108,7 +108,6 @@ public class atm
     else {
       boolean valid = false;
       while (valid == false) {
-        /*Note: Withdraw may ask you to withdraw again after initial withdraw input. Unknown why this error occurs.*/
     	System.out.print("Enter the amount you wish to withdraw: ");
         double amount = in.nextDouble();
         int result = account.withdraw(amount);
@@ -141,7 +140,7 @@ public class atm
 }
 
 	
-	/*  This was my original ATM, written in 1 file.
+	/*  This was my original ATM, written in 1 file, in case you were curious.
 	  
 	    public static void main(String[] args) {
 		atm guest = new atm();
