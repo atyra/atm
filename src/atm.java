@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class atm
-{
+public class atm {
   private Scanner in;
   private bankAccount account;
   
